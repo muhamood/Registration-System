@@ -14,6 +14,10 @@ export const SignUp = () => {
                 <input type='password' id="password" placeholder="Enter your password" size="50" required/>
             </div><br/>
             <div>
+                <label for="password">Confirm Password:</label>
+                <input type='password' id="password" placeholder="Confirm your password" size="50" required/>
+            </div><br/>
+            <div>
                 <div><button type="submit" value="Submit">Sign Up</button></div><br/>
                 <div><a href="/">Already have an account? Sign In</a></div>
                 
