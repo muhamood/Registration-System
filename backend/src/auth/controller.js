@@ -2,8 +2,30 @@ const  User  = require('../models/user');
 const  keys  = require('../config/keys');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const e = require('express');
+const express = require('express');
 
+
+const SignUp = async (req, res) =>{
+  const user = new User({
+    ...req.body
+});
+
+try{
+  await user.save();
+
+  return res.send({
+      success: true,
+      message: 'Sign up successful',
+      user
+
+  }); 
+} catch(e){
+   return res.send({
+    success: false,
+    message: e.message || 'Sign up unsuccessful',
+   })
+ }
+}
 
 const Login = async (req, res) => {
    
@@ -43,5 +65,5 @@ const Login = async (req, res) => {
     }
 }    
   
-module.exports =  {Login};
+module.exports =  {Login, SignUp};
   
