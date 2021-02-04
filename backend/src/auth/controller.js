@@ -15,7 +15,7 @@ if (!isValid) {
 
 const email = req.body.email;
 
-await User.findOne({ email });
+const user = await User.findOne({ email });
 
 const newUser = new User({
   ...req.body
