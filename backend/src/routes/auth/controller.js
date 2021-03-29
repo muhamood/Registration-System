@@ -1,9 +1,9 @@
-const  User  = require('../models/user'); 
-const  keys  = require('../config/keys');
+const  User  = require('../../models/user'); 
+const  keys  = require('../../config/keys');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const validateLoginInput = require('../validations/login');
-const validateSignUpInput = require('../validations/login');
+const validateLoginInput = require('../../validations/login');
+const validateSignUpInput = require('../../validations/login');
 
 const SignUp = async (req, res) =>{
  
@@ -89,5 +89,13 @@ const Login = async (req, res) => {
     }
 }    
   
-module.exports =  {Login, SignUp};
+const GetCurrentUser = async (req, res) => {
+   res.json({
+     message: 'Success',
+      id: req.user.id,
+      email: req.user.email
+    })
+}
+
+module.exports =  {Login, SignUp, GetCurrentUser};
   
