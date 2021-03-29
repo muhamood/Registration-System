@@ -6,11 +6,11 @@ export const Login = () => {
             <h1>Login Page</h1>
             <form action="">
             <div>
-                <label for="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <input type='email' id="email" placeholder="Enter your email" size="50" required/>
             </div><br/>
             <div>
-                <label for="password">Password:</label>
+                <label htmlFor="password">Password:</label>
                 <input type='password' id="password" placeholder="Enter your password" size="50" required/>
             </div><br/>
             <div>
